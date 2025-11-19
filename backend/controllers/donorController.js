@@ -13,7 +13,8 @@ exports.registerDonor = async (req, res) => {
 // Get All Donors
 exports.getDonorList = async (req, res) => {
   try {
-    const donors = await Donor.find();
+    // Security: Exclude the password field from the results
+    const donors = await Donor.find().select("-password");
     res.json(donors);
   } catch (error) {
     res.status(500).json({ error: "Error fetching donors" });
@@ -24,7 +25,14 @@ exports.getDonorList = async (req, res) => {
 exports.findDonor = async (req, res) => {
   try {
     const { bloodGroup, city } = req.body;
-    const donors = await Donor.find({ bloodGroup, city });
+    
+    // Build dynamic query
+    let query = {};
+    if(bloodGroup) query.bloodGroup = bloodGroup;
+    if(city) query.city = city;
+
+    // Security: Exclude the password field
+    const donors = await Donor.find(query).select("-password");
 
     res.json(donors);
   } catch (error) {

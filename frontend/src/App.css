@@ -1,1063 +1,260 @@
 /* =============================
-   ✨ Professional, Polished Styling
+   ✨ Life Drop - Professional Styling
 ============================= */
 
-/* Smooth transitions across the site */
+/* Global Resets & Transitions */
 * {
-  transition: all 0.25s ease-in-out;
-  scroll-behavior: smooth;
-  font-family: 'Inter', 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    transition: all 0.25s ease-in-out;
+    scroll-behavior: smooth;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* --- Navbar Enhancements --- */
+body {
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+/* --- Navbar --- */
 .nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  width: 100%;
-  top: 0;
-  left: 0;
-  flex-basis: 1;
-  z-index: 100;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s ease;
-  flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
 }
 
-.nav:hover {
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px);
-}
-
-.nav.scrolled {
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-}
-
-/* --- Container --- */
 .nav-container {
-  margin: 0 auto;
-  padding: 0.9rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* --- Logo --- */
 .nav-logo {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #b91c1c;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #b91c1c;
+    /* Red-700 */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
 }
 
 .nav-logo:hover {
-  transform: scale(1.08);
-  color: #dc2626;
-  text-shadow: 0 2px 10px rgba(185, 28, 28, 0.25);
+    transform: scale(1.02);
 }
 
-/* --- Navigation Icons --- */
 .nav-icons {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
+    display: flex;
+    gap: 1.5rem;
 }
 
 .nav-icons button {
-  background: none;
-  border: none;
-  color: #4b5563;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s ease;
-
-}
-
-.nav-icons button::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  width: 20px;
-  height: 2px;
-  background: #b91c1c;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
+    background: none;
+    border: none;
+    color: #4b5563;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .nav-icons button:hover {
-  color: #b91c1c;
-  transform: translateY(-2px);
+    color: #b91c1c;
+    background-color: #f3f4f6;
 }
 
-.nav-icons button:hover::after {
-  width: 100%;
-}
-
-/* --- Donor Button --- */
+/* Navbar Buttons */
 .donor-btn {
-  background: linear-gradient(135deg, #ef4444, #b91c1c);
-  color: #fff;
-  border: none;
-  border-radius: 9999px;
-  padding: 0.65rem 1.7rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  box-shadow: 0 6px 15px rgba(220, 38, 38, 0.25);
-  transition: all 0.3s ease;
-  width: 100px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px rgba(220, 38, 38, 0.2);
+    border: none;
+    cursor: pointer;
 }
 
 .donor-btn:hover {
-  background: linear-gradient(135deg, #b91c1c, #7f1d1d);
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 10px 20px rgba(185, 28, 28, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(220, 38, 38, 0.3);
 }
 
-/* --- Auth Buttons --- */
 .nav-auth {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.mainForm {
-  width: 45%;
-  box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.63);
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 16px;
-}
-
-.mainForm input {
-  padding: 6px;
-  font-size: 17px;
-  border-radius: 4px;
-  outline: none;
-  width: 100%;
-  margin: 12px 0px;
-}
-
-.mainForm button {
-  cursor: pointer;
-  padding: 12px 20px;
-  font-size: 18px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 6px;
-  border: none;
-  background-color: #941e1e;
-  color: white;
-}
-
-.mainForm button:hover {
-  background-color: #7c1717;
-}
-
-/* .nav-auth .login, */
-.nav-auth .signup {
-  padding: 0.45rem 1rem;
-  border-radius: 0.6rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
-
-.nav-auth .login {
-  border: 2px solid #b91c1c;
-  color: #b91c1c;
-  background: transparent;
-}
-
-.nav-auth .login:hover {
-  background: #b91c1c;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(185, 28, 28, 0.25);
-}
-
-.nav-auth .signup {
-  background: #941e1e;
-  color: #fff;
-  border: 2px solid transparent;
-}
-
-.nav-auth .signup:hover {
-  background: #991b1b;
-  box-shadow: 0 4px 10px rgba(185, 28, 28, 0.25);
-  transform: translateY(-2px);
-}
-
-/* --- Hover Shadow for All Buttons --- */
-button:hover {
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-}
-
-/* --- Accessibility Focus --- */
-button:focus,
-input:focus {
-  outline: 2px solid #dc2626;
-  outline-offset: 3px;
-  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.2);
-}
-
-/* =============================
-   Responsive Layout
-============================= */
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-  }
-
-  .nav-icons {
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .nav-auth {
-    width: 100%;
-    justify-content: flex-start;
-  }
-}
-
-/* ====== Home Page Styling ====== */
-
-/* ====== Home Page Styling (Updated for Unique & Attractive Look) ====== */
-.bgc {
-    /* UNIQUE & ATTRACTIVE BACKGROUND */
-    /* Deep blood red to black gradient, symbolizing a drop of life moving to the dark needs */
-    background: linear-gradient(180deg, #8a0303 0%, #1a0000 100%);
-    /* Adding a subtle blood drop texture (adjust path/name if using a real image) */
-    /* background-image: url('blood-drop-texture.svg'); /* Optional: If you have a subtle texture image */
-    background-size: cover;
-    min-height: 100vh;
-    padding: 60px 20px 40px; /* Increased top padding */
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
     align-items: center;
 }
 
-.text-center {
-    text-align: center;
-    max-width: 800px; /* Constrain content width for better readability */
-    margin: 0 auto;
-}
-
-/* Enhanced Welcome Text */
-.bgc .welcome-text {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.85); /* Subtler white */
-    margin-bottom: 5px;
-    letter-spacing: 2px;
-}
-
-/* Main Heading - The Gift of Life */
-.bgc h2 {
-    color: #ffcccc; /* Soft, contrasting light red */
-    font-size: 4.2rem; /* Much larger and impactful */
-    font-weight: 800;
-    margin-bottom: 15px;
-    letter-spacing: 2.5px;
-    text-shadow: 0 4px 15px rgba(255, 0, 0, 0.5); /* Glowing effect */
-}
-
-/* Sub-text - Every drop counts */
-.bgc p {
-    color: #f1f1f1;
-    font-size: 1.3rem;
-    font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    max-width: 600px;
-}
-
-/* Container for the Main Action Buttons */
-.action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 650px;
-    margin-bottom: 60px;
-}
-
-/* Button Base Style - Applied to both */
-.action-buttons button {
-    flex: 1;
-    padding: 1.2rem 2.5rem;
-    font-size: 1.25rem;
-    border-radius: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Professional transition */
-    border: none;
-}
-
-/* Register to Donate Button - Primary Action (Bright Red) */
-.action-buttons button:first-child {
-    background: linear-gradient(145deg, #ff1a1a, #c60000); /* Vibrant Red Gradient */
-    color: #fff;
-    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6); /* Strong, prominent glow */
-}
-
-.action-buttons button:first-child:hover {
-    background: linear-gradient(145deg, #c60000, #990000);
-    transform: translateY(-5px) scale(1.02); /* More noticeable lift */
-    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.8);
-}
-
-/* Find a Donor Button - Secondary Action (Dark Contrast) */
-.action-buttons button:last-child {
-    background-color: #0d0d0d;
-    color: #ccc;
-    border: 2px solid #333;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-}
-
-.action-buttons button:last-child:hover {
-    background-color: #1a1a1a;
-    color: #fff;
-    border-color: #c60000;
-    transform: translateY(-3px) scale(1.01);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-}
-
-
-/* Feature Cards Grid (bcg is the container) */
-.bcg {
-    margin-top: 50px;
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    width: 100%;
-    max-width: 1000px; /* Match max width of text-center */
-}
-
-/* Individual Feature Card */
-.card {
-    background: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
-    backdrop-filter: blur(5px);
-    color: #fff;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Darker shadow */
-    border-top: 3px solid #ff3333; /* A bright red accent line */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px); /* Deeper lift on hover */
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 51, 51, 0.4); /* Subtle red glow on hover */
-}
-
-.card h3 {
-    color: #ff9999; /* Light red for headings */
-    font-size: 1.6rem;
+.nav-auth .login {
+    color: #b91c1c;
     font-weight: 600;
-    margin-bottom: 15px;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.card p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 0;
+.nav-auth .signup {
+    background-color: #b91c1c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
 }
 
-/* Mobile Responsiveness for Home Page */
-@media (max-width: 768px) {
-    .bgc {
-        padding: 40px 15px;
-    }
-
-    .bgc h2 {
-        font-size: 2.8rem;
-        letter-spacing: 1px;
-    }
-
-    .bgc p {
-        font-size: 1rem;
-    }
-    
-    .action-buttons {
-        flex-direction: column;
-        gap: 15px;
-        max-width: 90%;
-    }
-
-    .action-buttons button {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        width: 100%;
-    }
-    
-    .bcg {
-        gap: 20px;
-    }
-    
-    .card h3 {
-        font-size: 1.4rem;
-    }
-    
+.nav-auth .signup:hover {
+    background-color: #991b1b;
 }
+
+/* --- Page Layouts --- */
+
+/* Home Hero Section */
 .bgc {
-  background-color: #b24c09;
-  min-height: 100vh;
-  padding: 40px 20px;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-}
-
-.text-center {
-  text-align: center;
+    background: linear-gradient(180deg, #991b1b 0%, #7f1d1d 100%);
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    color: white;
+    text-align: center;
 }
 
 .bgc h2 {
-  color: #fff;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .bgc p {
-  color: #f1f1f1;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 25px;
+    font-size: 1.25rem;
+    color: #fecaca;
+    /* Red-200 */
+    max-width: 600px;
+    margin-bottom: 2.5rem;
 }
 
-button {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  font-weight: 600;
-}
-
-button:first-child {
-  background-color: #c62828;
-  color: #fff;
-}
-
-button:first-child:hover {
-  background-color: #a71d1d;
-  transform: scale(1.05);
-}
-
-button:last-child {
-  background-color: #212121;
-  color: #fff;
-}
-
-button:last-child:hover {
-  background-color: #000;
-  transform: scale(1.05);
-}
-
+/* Cards Grid */
 .bcg {
-  margin-top: 50px;
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.card {
-  background-color: #fff;
-  color: #333;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.card h3 {
-  color: #b24c09;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .bgc {
-    padding: 20px;
-  }
-
-  .bgc h2 {
-    font-size: 2rem;
-  }
-
-  .bgc p {
-    font-size: 1rem;
-  }
-
-  button {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     width: 100%;
-    margin-bottom: 10px;
-  }
+    max-width: 1200px;
+    margin-top: 3rem;
 }
 
-/* ====== Signup Form ====== */
+/* Standard Forms (Login/Signup/Contact) */
+.mainForm,
+.sgup,
+.cnt form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    width: 100%;
+}
+
 .sgup {
-  width: 45%;
-  box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.63);
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 16px;
-}
-
-.sgup input {
-  padding: 6px;
-  font-size: 17px;
-  border-radius: 4px;
-  outline: none;
-  width: 100%;
-  margin: 12px 0px;
-}
-
-.sgup button {
-  cursor: pointer;
-  padding: 12px 20px;
-  font-size: 18px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 6px;
-  border: none;
-  background-color: #941e1e;
-  color: white;
-}
-
-.sgup button:hover {
-  background-color: #7c1717;
-}
-
-/* ====== Contact Page Styling ====== */
-.cnt {
-  background: linear-gradient(135deg, #fff5f5, #ffe7e7);
-  border-radius: 16px;
-  padding: 60px 40px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  font-family: "Poppins", sans-serif;
-  margin: 40px auto;
-  max-width: 1000px;
-}
-
-.cnt h2 {
-  color: #b21f1f;
-  margin-bottom: 20px;
-}
-
-.cnt p {
-  color: #444;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.cnt p::before {
-  font-size: 1.2rem;
-}
-
-form {
-  background: #fff;
-  padding: 30px 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-form h2 {
-  color: #b21f1f;
-  margin-bottom: 20px;
+    max-width: 500px;
+    margin: 2rem auto;
 }
 
 input,
+select,
 textarea {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1.5px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #333;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background-color: #f9fafb;
 }
 
 input:focus,
+select:focus,
 textarea:focus {
-  border-color: #c62828;
-  box-shadow: 0 0 6px rgba(198, 40, 40, 0.3);
-  outline: none;
+    outline: none;
+    border-color: #b91c1c;
+    box-shadow: 0 0 0 2px rgba(185, 28, 28, 0.2);
+    background-color: white;
 }
 
-button {
-  width: 100%;
-  padding: 14px 0;
-  background-color: #c62828;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #a71d1d;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .cnt {
-    padding: 30px 20px;
-  }
-
-  form {
-    margin-top: 30px;
-  }
-}
-/* ====== About Page Styling (Enhanced for Attractiveness) ====== */
-.abt {
-    /* Background: Use a subtle, modern white with a hint of red/pink */
-    background: #ffffff; /* Clean White Base */
-    border-radius: 20px; /* Softer, larger border radius */
-    padding: 70px 50px; /* Increased padding for more breathing room */
-    
-    /* Stronger, premium shadow with a red tint */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 0 0 10px rgba(220, 38, 38, 0.05);
-    
-    font-family: "Poppins", sans-serif;
-    line-height: 1.8; /* Better readability */
-    max-width: 1100px; /* Increased max width */
-    margin: 40px auto;
-    border: 1px solid #fce8e8; /* Very light border for definition */
-}
-
-/* Paragraph Text Styling */
-.abt p {
-    color: #444;
-    font-size: 1.15rem; /* Slightly larger text */
-    margin-bottom: 20px; /* Increased space between paragraphs */
-    transition: color 0.3s ease;
-}
-
-/* Mission/Vision Highlight (Strong Text) */
-.abt strong {
-    color: #b21f1f; /* Deep red for emphasis */
-    font-weight: 800; /* Extra bold */
-    letter-spacing: 0.5px;
-}
-
-/* Our Vision Heading */
-.abt .text-red-600 {
-    color: #c62828 !important; /* Bright, official red */
-    font-size: 1.6rem; /* Larger heading size */
-    font-weight: 700;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.abt .text-red-600::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 60px; /* Small red underline accent */
-    height: 3px;
-    background: #c62828;
-    border-radius: 2px;
-}
-
-
-/* Core Values Grid Container */
-.abt .grid {
-    margin-top: 50px; /* More space above the cards */
-    display: grid;
-    gap: 30px; /* Increased gap */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-/* Individual Card Component (Core Values) */
-/* Note: Since your Card is a component, this styles the rendered HTML structure */
-.abt .card { 
-    background-color: #f7f7f7; /* Off-white for contrast */
-    border-radius: 16px; 
-    padding: 30px; 
-    
-    /* Unique Shadow and Border */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); 
-    border-left: 5px solid #ff4444; /* Striking left accent border */
-    
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.abt .card:hover {
-    transform: translateY(-8px) rotateX(1deg); /* Unique 3D subtle lift */
-    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.15); /* Soft red hover glow */
-    background-color: #fff;
-    border-left: 5px solid #a71d1d; /* Darker red on hover */
-}
-
-.abt .card h3 {
-    color: #a71d1d; /* Darker red for card titles */
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-/* Card Content Styling */
-.abt .card p {
-    color: #555;
+/* Custom Button Component Class */
+.btnComponent {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #dc2626, #b91c1c);
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
     font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0;
+    text-align: center;
 }
 
-
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-    .abt {
-        padding: 40px 20px;
-        margin: 20px auto;
-    }
-
-    .abt p {
-        font-size: 1rem;
-    }
-    
-    .abt .text-red-600 {
-        font-size: 1.4rem;
-    }
-    
-    .abt .grid {
-        gap: 20px;
-    }
-}
-/* ====== About Page Styling ====== */
-.abt {
-  background: linear-gradient(135deg, #fff5f5, #ffe7e7);
-  border-radius: 16px;
-  padding: 60px 40px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  font-family: "Poppins", sans-serif;
-  line-height: 1.7;
-  max-width: 1000px;
-  margin: 40px auto;
+.btnComponent:hover {
+    background: linear-gradient(to right, #b91c1c, #991b1b);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.abt p {
-  color: #444;
-  font-size: 1.05rem;
-  margin-bottom: 16px;
-}
-
-.abt strong {
-  color: #b21f1f;
-  font-weight: 700;
-}
-
-.abt .text-red-600 {
-  color: #b21f1f !important;
-  font-size: 1.2rem;
-  margin-top: 20px;
-}
-
-.abt .grid {
-  margin-top: 40px;
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 14px;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.329);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(82, 8, 78, 0);
-}
-
-.card h3 {
-  color: #b21f1f;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-  .abt {
-    padding: 30px 20px;
-  }
-
-  .abt p {
-    font-size: 1rem;
-  }
-}
-
-/* ====== Donor List Page Styling ====== */
+/* --- Donor List Styles --- */
 .dls {
-  background: linear-gradient(135deg, #fff5f5, #ffe7e7);
-  border-radius: 16px;
-  padding: 60px 40px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  font-family: "Poppins", sans-serif;
-  max-width: 1200px;
-  margin: 40px auto;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 1rem;
 }
 
-.dls > div {
-  background-color: #fff;
-  border-top: 4px solid #c62828;
-  border-radius: 14px;
-  padding: 25px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+/* --- About Page --- */
+.abt {
+    background: white;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
+    margin: 0 auto;
+    border-top: 4px solid #b91c1c;
 }
 
-.dls > div:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+/* --- Contact Page --- */
+.cnt {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.dls h4 {
-  font-size: 1.25rem;
-  color: #b21f1f;
-  margin-bottom: 6px;
-}
-
-.dls span {
-  font-size: 0.9rem;
-  background: #c62828;
-  color: #fff;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 999px;
-  box-shadow: 0 2px 4px rgba(198, 40, 40, 0.4);
-}
-
-.dls p {
-  color: #555;
-  font-size: 0.95rem;
-  margin: 4px 0;
-}
-
-.dls strong {
-  color: #333;
-}
-
-.dls button {
-  width: 100%;
-  margin-top: 16px;
-  background-color: #c62828;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.dls button:hover {
-  background-color: #a71d1d;
-  transform: translateY(-2px);
-}
-
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .dls {
-    padding: 30px 20px;
-    grid-template-columns: 1fr;
-  }
+    .bgc h2 {
+        font-size: 2.5rem;
+    }
 
-  .dls > div {
-    padding: 20px;
-  }
-}
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-/* General Button Reset */
-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  border-radius: 30px;
-  padding: 10px 28px;
-}
-
-/* 🔴 Red Gradient Button */
-.btn-red {
-  background: linear-gradient(90deg, #ff1e1e, #cc0000);
-  color: white;
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
-  border: 2px solid transparent;
-}
-
-.btn-red:hover {
-  background: linear-gradient(90deg, #ff4d4d, #e60000);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.5);
-}
-
-/* ⚪ Outline Red Button */
-.btn-outline {
-  background: transparent;
-  color: #e60000;
-  border: 2px solid #e60000;
-}
-
-.btn-outline:hover {
-  background: #e60000;
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.3);
-}
-
-/* ⚫ Dark Button */
-.btn-dark {
-  background: #222;
-  color: white;
-  border: 2px solid #222;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.btn-dark:hover {
-  background: #000;
-  transform: translateY(-3px);
-}
-
-/* 🏠 Small Icon Buttons (like home, info, contact) */
-.icon-btn {
-  width: 45px;
-  height: 45px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  background: #f2f2f2;
-  border: 2px solid #e60000;
-  color: #e60000;
-  transition: all 0.3s ease;
-}
-
-.icon-btn.active,
-.icon-btn:hover {
-  background: linear-gradient(145deg, #ff1e1e, #cc0000);
-  color: white;
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
-}
-
-/* 🔥 Register Button (Red Gradient + Glow) */
-.rg-btn {
-  background: linear-gradient(90deg, #ff1e1e, #b80000);
-  color: white;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  border: none;
-  border-radius: 50px;
-  padding: 14px 40px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.rg-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.3), transparent);
-  transform: skewX(-25deg);
-  transition: all 0.5s;
-}
-
-.rg-btn:hover::before {
-  left: 125%;
-}
-
-.rg-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.5);
-}
-
-/* 🩸 Find a Donor Button (Dark Mode Style) */
-.find-btn {
-  background: linear-gradient(90deg, #1c1c1c, #3a3a3a);
-  color: white;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  border: none;
-  border-radius: 50px;
-  padding: 14px 40px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.find-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.25), transparent);
-  transform: skewX(-25deg);
-  transition: all 0.5s;
-}
-
-.find-btn:hover::before {
-  left: 125%;
-}
-
-.find-btn:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(90deg, #2e2e2e, #000);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    .nav-icons {
+        width: 100%;
+        justify-content: center;
+    }
 }

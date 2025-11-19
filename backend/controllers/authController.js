@@ -4,8 +4,8 @@ const jwt = require("jsonwebtoken");
 
 exports.signup = async (req, res) => {
   try {
-    // Added lastDonation to destructuring
-    const {Qb, name, email, password,Kp, bloodGroup, city, phone, lastDonation } = req.body;
+    // Cleaned up destructuring (removed garbage characters)
+    const { name, email, password,TZ, bloodGroup, city, phone, lastDonation } = req.body;
 
     const exists = await Donor.findOne({ email });
     if (exists) return res.json({ msg: "Email already registered!" });
@@ -19,7 +19,7 @@ exports.signup = async (req, res) => {
       bloodGroup,
       city,
       phone,
-      lastDonation: lastDonation || "Not donated yet", // Save the last donation info
+      lastDonation: lastDonation || "Not donated yet",
     });
 
     res.json({ msg: "Signup Successful 🎉", donor: newDonor });
@@ -43,7 +43,16 @@ exports.login = async (req, res) => {
       expiresIn: "7d",
     });
 
-    res.json({ msg: "Login Successful", token, user: { name: donor.name, email: donor.email } });
+    res.json({ 
+      msg: "Login Successful", 
+      token, 
+      user: { 
+        id: donor._id,
+        name: donor.name, 
+        email: donor.email,
+        bloodGroup: donor.bloodGroup
+      } 
+    });
   } catch (error) {
     console.error("Login Error:", error);
     res.status(500).json({ error: "Server Error" });
